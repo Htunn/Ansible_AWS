@@ -1,0 +1,42 @@
+- hosts:  localhost
+  gather_facts: False
+
+  tasks:
+    - name: Provision a set of instances
+      ec2:
+        key_name: DevAdmin 
+       # group: test
+        instance_type: t2.micro
+        image: "ami-0c20b8b385217763f"
+        wait: true
+        exact_count: 5
+        count_tag:
+          Name: ec2_test 
+        instance_tags:
+          Name: ec2_test 
+      register: ec2 
+
+#    - name: Add all instances public IPS to host group 
+#      add_host:
+#        hostname: "{{ item.public_ip }}"
+#        groups: ec2hosts
+#      loop: "{{ ec2.instances }}"
+#
+#- hosts: ec2hosts
+#  name: configuration play
+#  user: ubuntu
+#  gather_facts: true
+#
+#  tasks:
+#    - name: check NTP service 
+#      service:
+#        name: ntpd
+#        state: started
+
+- name: Terminate instances
+  hosts: localhost
+  tasks:
+    - name: Terminate instances that were previously launched
+      amazon.aws.ec2:
+        state: 'absent'
+        instance_ids: '{{ ec2.instance_ids }}'

@@ -1,0 +1,12 @@
+---
+- name: Test S3
+  hosts: localhost
+  connection: local 
+
+  tasks:
+    - name: create new bucket
+      aws_s3:
+        bucket: test-s3-bucket-htunn
+        mode: create
+        region: ap-southeast-1
+
