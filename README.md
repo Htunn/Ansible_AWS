@@ -22,16 +22,16 @@
 * cat .aws/credentials
 
 ## You can get keys from the Your Security Credentials page in the AWS Management 
-> AccessKeyId: AKIALNZTQW6H3EFBRLHQ
+> AccessKeyId: example_key
 
-> SecretAccessKey: f26B8touguUBELGpdyCyc9o0ZDzP2MEUWNC0JNwA
+> SecretAccessKey: example_secret_key
 
 ## Testing your aws credentials is working or not
 
 > aws sts get-caller-identity
 
 #### to use aws credentials in ansible use environment variables
-#### modify your "~/.bashrc" or "~/.bash_profile"
+#### modify your bash_rc or bash_profile
 
 > export AWS_ACCESS_KEY_ID='your access key id'
 
