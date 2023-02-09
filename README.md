@@ -1,3 +1,4 @@
+[![Board Status](https://dev.azure.com/htunn/f1a8c442-29ce-4705-a287-cb938d80e40e/edb43178-2506-44c1-a155-6b1426179b13/_apis/work/boardbadge/9fc4b2ec-15f6-49ed-86d0-651bb310a0ca)](https://dev.azure.com/htunn/f1a8c442-29ce-4705-a287-cb938d80e40e/_boards/board/t/edb43178-2506-44c1-a155-6b1426179b13/Microsoft.RequirementCategory)
 # Prerequisites
 **ubuntu or whatever linux distro**
 
